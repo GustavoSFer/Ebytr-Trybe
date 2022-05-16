@@ -14,13 +14,15 @@
 
 ## STATUS DO PROJETO
 
-<h2>Em Construção</h2>
+<p>Em Construção</p>
 
 ## TECNOLOGIAS UTILIZADOS
 
 <p>
-Front-End em React;
-Back-End em NodeJS, Express e com MongoDB;
+  Front-End em React;
+</p>
+<p>
+  Back-End em NodeJS, Express e com MongoDB;
 </p>
 
 # Instruções para iniciar o projeto
