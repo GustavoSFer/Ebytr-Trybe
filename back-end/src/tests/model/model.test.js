@@ -5,7 +5,7 @@ const model = require('../../ConnectionMongo');
 const { expect } = require('chai');
 const Sinon = require('sinon');
 
-describe('ListModel', () => {
+describe('Model', () => {
   describe('#find', () => {
    describe('Quando existe dados no banco', () => {
     before(() => {
