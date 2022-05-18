@@ -11,4 +11,4 @@ const schema = new mongoose.Schema({
 
 const model = mongoose.model('List', schema);
 
-module.exports =  model;
+module.exports = model;

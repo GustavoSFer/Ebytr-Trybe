@@ -8,9 +8,9 @@ const getAll = async () => {
 const postList = async (task, status) => {
   const addTask = await listModel.postList(task, status);
   return addTask;
-}
+};
 
 module.exports = {
   getAll,
   postList,
-}
+};

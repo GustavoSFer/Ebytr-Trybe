@@ -7,4 +7,4 @@ const validationTask = (req, res, next) => {
 
 module.exports = {
   validationTask,
-}
+};

@@ -10,9 +10,9 @@ const postList = async (task, status) => {
   const addTask = await model.create({ task, status, date: new Date() });
 
   return addTask;
-}
+};
 
 module.exports = {
   getAll,
   postList,
-}
+};
