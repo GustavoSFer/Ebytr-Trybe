@@ -35,8 +35,19 @@ describe('Model', function () {
       it('Deve ser possivel atualizar a tarefa', async function () {
         Sinon.stub(model, 'updateOne').resolves(returnDb[1]);
 
-        const taskList = await listModel.postList(taskBody);
-        expect(taskList).to.deep.eq(returnDb[0]);
+        const taskList = await listModel.updateTask(taskBody);
+        expect(taskList).to.deep.equal(returnDb[1]);
+      });
+    });
+  });
+
+  describe('#Delete', function () {
+    describe('Deletando uma tarefa', function () {
+      it('Deve ser possivel remover uma tarefa', async function () {
+        Sinon.stub(model, 'deleteOne').resolves(returnDb[1]);
+
+        const taskList = await listModel.remove('6283rt5e7cf6a71f7ebc637a');
+        expect(taskList).to.deep.equal(returnDb[1]);
       });
     });
   });
