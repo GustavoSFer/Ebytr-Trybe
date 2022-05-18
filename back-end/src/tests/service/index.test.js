@@ -11,7 +11,7 @@ describe('Service', function () {
       const taskList = await listService.getAll();
       expect(taskList).to.deep.eq(returnDb);
     });
-    it('Sen dados no Db deve retornar um array vazio', async function () {
+    it('Sem dados no Db deve retornar um array vazio', async function () {
       Sinon.stub(listModel, 'getAll').resolves([]);
       const taskList = await listService.getAll();
       expect(taskList).to.be.empty;
