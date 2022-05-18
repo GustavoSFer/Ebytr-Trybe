@@ -12,7 +12,20 @@ const postList = async (task, status) => {
   return addTask;
 };
 
+const updateTask = async (id, status) => {
+  const updatingTask = await model.updateOne({ _id: id }, { status, updateDate: new Date() });
+  return updatingTask;
+};
+
+const remove = async (id) => {
+  const removeTask = await model.deleteOne({ _id: id });
+
+  return removeTask;
+};
+
 module.exports = {
   getAll,
   postList,
+  updateTask,
+  remove,
 };

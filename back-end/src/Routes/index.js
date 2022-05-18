@@ -6,7 +6,7 @@ const route = Router();
 
 route.get('/', listController.getAll);
 route.post('/', validationTask, listController.postList);
-route.put('/', listController.getAll);
-route.delete('/', listController.getAll);
+route.put('/', listController.updateTask);
+route.delete('/', listController.remove);
 
 module.exports = route;

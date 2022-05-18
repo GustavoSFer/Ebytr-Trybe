@@ -7,6 +7,7 @@ const schema = new mongoose.Schema({
   task: String,
   status: String,
   date: Date,
+  updateDate: Date,
 });
 
 const model = mongoose.model('List', schema);
