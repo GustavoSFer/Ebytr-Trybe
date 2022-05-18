@@ -31,4 +31,26 @@ describe('Service', () => {
       });
     });
   });
+
+
+
+
+  describe('#create', () => {
+    describe('Deve cadastrar uma nova tarefa', () => {
+      before(() => {
+        Sinon.stub(listModel, 'postList').resolves(returnDb[0]);
+      });
+      after(() => {
+        Sinon.restore();
+      });
+      it('Deve retornar a tarefa cadastrada', async () => {
+        const taskList = await listService.postList(taskBody);
+        expect(taskList).to.deep.eq(returnDb[0]);
+      });
+    });
+  });
+
+
+
+
 });
