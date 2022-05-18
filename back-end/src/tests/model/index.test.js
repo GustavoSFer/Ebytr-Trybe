@@ -31,9 +31,6 @@ describe('Model', () => {
       });
     });
   });
-
-
-
   describe('#create', () => {
     describe('Cadastrando uma nova tarefa', () => {
       before(() => {
@@ -48,8 +45,5 @@ describe('Model', () => {
       });
     });
   });
-
-
-
 
 });

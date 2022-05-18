@@ -31,10 +31,6 @@ describe('Service', () => {
       });
     });
   });
-
-
-
-
   describe('#create', () => {
     describe('Deve cadastrar uma nova tarefa', () => {
       before(() => {
@@ -49,8 +45,5 @@ describe('Service', () => {
       });
     });
   });
-
-
-
 
 });
