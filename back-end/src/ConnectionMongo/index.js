@@ -4,11 +4,12 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/ebytr-trybe');
 
 const schema = new mongoose.Schema({
-  list: String,
+  task: String,
   status: String,
-  data: Date,
+  date: Date,
+  updateDate: Date,
 });
 
 const model = mongoose.model('List', schema);
 
-module.exports =  model;
+module.exports = model;

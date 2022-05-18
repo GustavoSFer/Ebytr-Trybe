@@ -1,4 +1,5 @@
 const express = require('express');
+const error = require('./middleware/error');
 require('dotenv').config;
 const route = require('./Routes');
 
@@ -8,6 +9,8 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json());
 
 app.use('/', route);
+
+app.use(error);
 
 app.listen(PORT, () => console.log(`Servidor rodando na porta: ${PORT}`));
 

@@ -6,15 +6,24 @@
     "mongoose": "^6.3.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16"
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "eslint": "^8.15.0",
+    "eslint-config-trybe-backend": "^1.0.4",
+    "eslint-plugin-chai-friendly": "^0.7.2",
+    "eslint-plugin-sonarjs": "^0.13.0",
+    "mocha": "^10.0.0",
+    "nodemon": "^2.0.16",
+    "sinon": "^14.0.0"
   },
   "name": "back-end",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha src/tests/**/*$NAME*.test.js --exit",
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json ."
   },
   "keywords": [],
   "author": "",
