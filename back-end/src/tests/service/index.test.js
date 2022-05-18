@@ -39,4 +39,17 @@ describe('Service', function () {
       });
     });
   });
+
+    describe('#Deletando', function () {
+      describe('Deletando uma tarefa', function () {
+        it('Deve ser possivel remover a tarefa', async function () {
+          Sinon.stub(listModel, 'remove').resolves({
+            acknowledged: true,
+            deletedCount: 1,
+          });
+          const taskList = await listService.remove('6283rt5e7cf6a71f7ebc637a');
+          expect(taskList).to.deep.eq({ acknowledged: true, deletedCount: 1 });
+        });
+    });
+  });
 });

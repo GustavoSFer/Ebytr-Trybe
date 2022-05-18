@@ -17,7 +17,7 @@ const updateTask = async (req, res) => {
   const { id, status } = req.body;
   const updatingTask = await service.updateTask(id, status);
 
-  return res.status(201).json(updatingTask);
+  return res.status(200).json(updatingTask);
 };
 
 const remove = async (req, res) => {
