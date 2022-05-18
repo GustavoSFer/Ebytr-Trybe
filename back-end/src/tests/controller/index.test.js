@@ -4,7 +4,6 @@ const { returnDb, taskBody } = require('../MockDb/task');
 const service = require('../../Service/listService');
 const listController = require('../../Controller/listController');
 
-
 describe('Controller', () => {
   const response = {};
   const request = {};
