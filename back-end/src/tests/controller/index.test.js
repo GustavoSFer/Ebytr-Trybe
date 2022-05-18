@@ -16,13 +16,11 @@ describe('Controller', function () {
       response.status = Sinon.stub().returns(response);
       response.json = Sinon.stub().returns();
     });
-    after(function () {
-      Sinon.restore();
-    });
     it('Quando existe dados - Deve retornar o status 200', async function () {
       Sinon.stub(service, 'getAll').resolves(returnDb);
       await listController.getAll(request, response);
       expect(response.status.calledWith(200)).to.be.equal(true);
+      Sinon.restore();
     });
     it('Deve retornar um array vazio', async function () { // erro
       Sinon.stub(service, 'getAll').resolves([]);

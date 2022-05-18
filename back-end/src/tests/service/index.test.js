@@ -10,6 +10,7 @@ describe('Service', function () {
       Sinon.stub(listModel, 'getAll').resolves(returnDb);
       const taskList = await listService.getAll();
       expect(taskList).to.deep.eq(returnDb);
+      Sinon.restore();
     });
     it('Sem dados no Db deve retornar um array vazio', async function () {
       Sinon.stub(listModel, 'getAll').resolves([]);
