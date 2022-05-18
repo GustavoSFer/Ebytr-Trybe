@@ -27,4 +27,16 @@ describe('Service', function () {
       });
     });
   });
+
+  describe('#Update', function () {
+    describe('Atualizando uma tarefa', function () {
+      it('Deve ser possivel atualizar a tarefa', async function () {
+        Sinon.stub(listModel, 'updateTask').resolves(returnDb[0]);
+        const taskList = await listService.updateTask(
+          { id: '6283rt5e7cf6a71f7ebc637a', status: 'feito' },
+        );
+        expect(taskList).to.deep.eq(returnDb[0]);
+      });
+    });
+  });
 });
