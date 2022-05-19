@@ -1,0 +1,28 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "engineStrict": true,
+  "scripts": {
+    "start:back": "cd back-end && npm start",
+    "start:front": "cd front-end && npm start",
+    "start": "npm run start:back & npm run start:front"   
+  },
+  "devDependencies": {
+    "@faker-js/faker": "6.0.0",
+    "axios": "0.26.1",
+    "dotenv": "16.0.0",
+    "jest": "27.5.1",
+    "jest-puppeteer": "6.1.0",
+    "jsonwebtoken": "8.5.1",
+    "moment": "2.29.1",
+    "mysql2": "2.3.3",
+    "pm2": "5.2.0",
+    "puppeteer": "13.5.1",
+    "sequelize": "6.17.0",
+    "sequelize-cli": "6.4.1"
+  }
+}
