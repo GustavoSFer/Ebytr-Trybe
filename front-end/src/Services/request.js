@@ -7,6 +7,12 @@ const TaskRequest = async (endpoint) => {
   return data;
 };
 
+const AddTaskRequest = async (endpoint, body) => {
+  console.log(body);
+  await axios.post((baseURL + endpoint), body);
+};
+
 export {
   TaskRequest,
+  AddTaskRequest,
 }

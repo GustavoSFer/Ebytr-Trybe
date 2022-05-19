@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Input({ name, task, handleChange }) {  
+function Input({ name, value, handleChange }) {  
   return (
-    <input type="text" name={ name } value={ task } onChange={ handleChange } />
+    <input type="text" name={ name } value={ value } onChange={ handleChange } />
   );
 }
 

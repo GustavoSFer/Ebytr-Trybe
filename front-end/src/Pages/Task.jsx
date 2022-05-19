@@ -2,19 +2,25 @@ import React, { useEffect, useState } from 'react';
 import ButtonGeneric from '../Components/ButtonGeneric';
 import Input from '../Components/Input';
 import Table from '../Components/Table';
-import { TaskRequest } from '../Services/request';
+import { TaskRequest, AddTaskRequest } from '../Services/request';
 
 function Task() {
   const [taskDb, setTaskDb] = useState([]);
   const [task, setTask] = useState('');
+  // const [status, setStatus] = useState('');
 
-  const hadleClick = () => {
-    console.log('foi clicado');
+  const hadleClick = async() => {
+    addRequest();
+    setTask('');
   };
 
   const change = ({ target }) => {
     setTask(target.value);
   };
+
+  const addRequest = async () => {
+    await AddTaskRequest('/', { task, status: 'Pendente' });
+  }
 
   const dataRequest = async () => {
     const data = await TaskRequest('/');
@@ -23,7 +29,7 @@ function Task() {
 
   useEffect(() => {
     dataRequest();
-  }, []);
+  }, [task]);
 
   return (
     <main>
@@ -33,16 +39,19 @@ function Task() {
       </section>
       <section>
        <table>
-         <tr>
-           <td>Tarefas</td>
-           <td>Status</td>
-           <td>Data de cadastro</td>
-           <td>Excluir</td>
-         </tr>
-         { console.log(taskDb) }
-         {
-           taskDb.map((item) => <Table key={item.id} item={item} />)
-         }
+        <thead>
+          <tr>
+            <td>Tarefas</td>
+            <td>Status</td>
+            <td>Data de cadastro</td>
+            <td>Excluir</td>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            taskDb.map((item) => <Table key={item.id} item={item} />)
+          }
+        </tbody>
        </table>
       </section>
     </main>
