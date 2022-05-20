@@ -7,6 +7,6 @@ const route = Router();
 route.get('/', listController.getAll);
 route.post('/', validationPost, listController.postList);
 route.put('/', validationPut, listController.updateTask);
-route.delete('/', listController.remove);
+route.delete('/:id', listController.remove); // No axios o Delete precisa ser feito como parametro, não chega o body
 
 module.exports = route;
