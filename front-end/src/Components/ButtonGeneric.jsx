@@ -1,8 +1,8 @@
 import React from 'react';
 
-function ButtonGeneric({ click, children }) {
+function ButtonGeneric({ click, children, enable }) {
   return (
-    <button type='button' onClick={ click } >
+    <button type='button' onClick={ click } disabled={ enable } >
       { children }
     </button>
   );

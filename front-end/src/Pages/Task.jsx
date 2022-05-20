@@ -7,6 +7,7 @@ import { TaskRequest, AddTaskRequest } from '../Services/request';
 function Task() {
   const [taskDb, setTaskDb] = useState([]);
   const [task, setTask] = useState('');
+  const [enable, setEnable] = useState(true);
 
   const hadleClick = async() => {
     addRequest();
@@ -19,7 +20,7 @@ function Task() {
 
   const addRequest = async () => {
     await AddTaskRequest('/', { task, status: 'Pendente' });
-  }
+  };
 
   const dataRequest = async () => {
     const data = await TaskRequest('/');
@@ -34,7 +35,7 @@ function Task() {
     <main>
       <section>
         <Input name="task" value={ task } handleChange={ change } />
-        <ButtonGeneric click={ hadleClick }>Cadastrar tarefa</ButtonGeneric>
+        <ButtonGeneric click={ hadleClick } ativo={ enable } >Cadastrar tarefa</ButtonGeneric>
       </section>
       <section>
        <table>
