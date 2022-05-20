@@ -7,11 +7,13 @@ import { TaskRequest, AddTaskRequest } from '../Services/request';
 function Task() {
   const [taskDb, setTaskDb] = useState([]);
   const [task, setTask] = useState('');
-  const [enable, setEnable] = useState(true);
+  const [msgError, setMsgError] = useState();
 
   const hadleClick = async() => {
+    if (task === '') return setMsgError(<h3>Por favor, escrever uma tarefa</h3>);
     addRequest();
     setTask('');
+    setMsgError('');
   };
 
   const change = ({ target }) => {
@@ -35,7 +37,8 @@ function Task() {
     <main>
       <section>
         <Input name="task" value={ task } handleChange={ change } />
-        <ButtonGeneric click={ hadleClick } ativo={ enable } >Cadastrar tarefa</ButtonGeneric>
+        <ButtonGeneric click={ hadleClick }>Cadastrar tarefa</ButtonGeneric>
+        { msgError ? msgError : '' }
       </section>
       <section>
        <table>
