@@ -17,9 +17,9 @@ const upDateTaskRequest = async (endpoint, body) => {
   await axios.put((baseURL + endpoint), body);
 };
 
-const deleteTaskRequest = async (endpoint, body) => {
-  console.log('Deletando vendo', body);
-  await axios.delete((baseURL + endpoint), body);
+const deleteTaskRequest = async (endpoint, params) => {
+  console.log('Deletando vendo', params);
+  await axios.delete(`${baseURL}${endpoint}${params}`);
 };
 
 export {

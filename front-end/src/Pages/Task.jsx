@@ -28,7 +28,7 @@ function Task() {
 
   useEffect(() => {
     dataRequest();
-  }, [taskDb]);
+  }, [task]);
 
   return (
     <main>
