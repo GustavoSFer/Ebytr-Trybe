@@ -12,7 +12,19 @@ const AddTaskRequest = async (endpoint, body) => {
   await axios.post((baseURL + endpoint), body);
 };
 
+const upDateTaskRequest = async (endpoint, body) => {
+  console.log(body);
+  await axios.put((baseURL + endpoint), body);
+};
+
+const deleteTaskRequest = async (endpoint, body) => {
+  console.log('Deletando vendo', body);
+  await axios.delete((baseURL + endpoint), body);
+};
+
 export {
   TaskRequest,
   AddTaskRequest,
+  upDateTaskRequest,
+  deleteTaskRequest,
 }

@@ -7,7 +7,6 @@ import { TaskRequest, AddTaskRequest } from '../Services/request';
 function Task() {
   const [taskDb, setTaskDb] = useState([]);
   const [task, setTask] = useState('');
-  // const [status, setStatus] = useState('');
 
   const hadleClick = async() => {
     addRequest();
@@ -49,7 +48,7 @@ function Task() {
         </thead>
         <tbody>
           {
-            taskDb.map((item) => <Table key={item.id} item={item} />)
+            taskDb.map((item) => <Table key={item._id} item={item} />)
           }
         </tbody>
        </table>
