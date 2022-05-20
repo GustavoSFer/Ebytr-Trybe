@@ -28,7 +28,7 @@ function Task() {
 
   useEffect(() => {
     dataRequest();
-  }, [task]);
+  }, [taskDb]);
 
   return (
     <main>
@@ -43,7 +43,7 @@ function Task() {
             <td>Tarefas</td>
             <td>Status</td>
             <td>Data de cadastro</td>
-            <td>Excluir</td>
+            <td>Excluir / Editar</td>
           </tr>
         </thead>
         <tbody>
