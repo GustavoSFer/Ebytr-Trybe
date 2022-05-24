@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Input({ name, value, handleChange }) {  
+function Input({ name, value, handleBlur = () => {} }) {  
   return (
-    <input type="text" name={ name } value={ value } onChange={ handleChange } />
+    <input type="text" name={ name } value={ value } onBlur={ handleBlur } />
   );
 }
 
