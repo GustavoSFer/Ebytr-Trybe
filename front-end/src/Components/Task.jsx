@@ -35,10 +35,10 @@ function Task({ item, click }) {
 
   return (
     <tr>
-      <td>{ inputTask }</td>
+      <td className="fw-lighter text-monospace">{ inputTask }</td>
       {/* <td>{ (toEdit) ? <Input name="task" handleBlur={ (handleChange) } /> : inputTask }</td> */}
-      <td>{ (toEdit) ? <Status change={ handleChange } /> : status }</td>
-      <td>{ item.date }</td>
+      <td className="fw-lighter">{ (toEdit) ? <Status change={ handleChange } /> : status }</td>
+      <td className="fw-lighter">{ item.date }</td>
       <td>
         <ButtonGeneric click={ click }>
           <img src={ excluir } alt="Excluir tarefa" id={item._id} />

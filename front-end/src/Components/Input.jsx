@@ -2,7 +2,15 @@ import React from 'react';
 
 function Input({ name, value, handleBlur = () => {} }) {  
   return (
-    <input type="text" name={ name } value={ value } onBlur={ handleBlur } />
+    <div className="input-group-text">
+      <input
+        type="text"
+        className="form-control"
+        name={ name }
+        value={ value }
+        onBlur={ handleBlur }
+      />
+    </div>
   );
 }
 

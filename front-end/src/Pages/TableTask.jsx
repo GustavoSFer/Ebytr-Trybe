@@ -41,16 +41,18 @@ function TableTask() {
   }, [task]);
 
   return (
-      <main>
-        <section>
-          <Input name="task" handleBlur={ handleBlur } />
-          <ButtonGeneric click={ hadleClick }>Cadastrar tarefa</ButtonGeneric>
+      <main className="container-sm">
+        <section className="m-4">
+          <label className="d-flex justify-content-center m-3">
+            <Input name="task" handleBlur={ handleBlur } />
+            <ButtonGeneric click={ hadleClick }>Cadastrar tarefa</ButtonGeneric>
+          </label>
           { msgError ? msgError : '' }
         </section>
         <section>
-        <table>
+        <table className="table table-dark border border-info">
           <thead>
-            <tr>
+            <tr className="table-active">
               <td>Tarefas</td>
               <td>Status</td>
               <td>Data de cadastro</td>
