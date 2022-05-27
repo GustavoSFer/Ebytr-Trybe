@@ -1,13 +1,13 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Task from "./Pages/Task";
+import TableTask from "./Pages/TableTask";
 
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={ <Task />} />
+      <Route path="/" element={ <TableTask />} />
     </Routes>
   </BrowserRouter>
   );
