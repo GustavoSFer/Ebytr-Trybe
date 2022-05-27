@@ -13,25 +13,14 @@ function Task({ item, click }) {
   
 
   const handleChange = async ({ target }) => {
-    if (target.name === 'status') {
-      await upDateTaskRequest('/', { id: item._id, status: target.value });
-      setStatus(target.value);
-    } else if (target.name === 'task') {
-      setInputTask(target.value);
-      await upDateTaskRequest('/', { task: target.value, status: item.status });
-      
-    }
+    await upDateTaskRequest('/', { id: item._id, status: target.value });
+    setStatus(target.value);
     setToEdit(false);
   };
 
   const edit = () => {
     setToEdit(true);
   };
-
-  // const del = () => {
-  //   setDeletar(true);
-  //   hadleClickDelete();
-  // }
 
   return (
     <tr>
