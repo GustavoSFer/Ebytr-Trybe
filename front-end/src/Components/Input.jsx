@@ -2,7 +2,7 @@ import React from 'react';
 
 function Input({ name, value, handleBlur = () => {} }) {  
   return (
-    <div className="input-group-text">
+    <div className="me-4">
       <input
         type="text"
         className="form-control"

@@ -42,9 +42,10 @@ function TableTask() {
 
   return (
       <main className="container-sm">
-        <section className="m-4">
-          <label className="d-flex justify-content-center m-3">
+        <section className="">
+          <label className="d-flex justify-content-evenly m-3">
             <Input name="task" handleBlur={ handleBlur } />
+            opções de filtro
             <ButtonGeneric click={ hadleClick }>Cadastrar tarefa</ButtonGeneric>
           </label>
           { msgError ? msgError : '' }
